@@ -1,100 +1,72 @@
-# Savant: High-Performance Computer Vision Framework For Data Center And Edge
+# Savant
 
-![GitHub release (with filter)](https://img.shields.io/github/v/release/insight-platform/Savant)
-[![Build status](https://github.com/insight-platform/Savant/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/insight-platform/Savant/actions/workflows/main.yml)
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/SavantFramework.svg?style=social&label=Follow%20%40SavantFramework)](https://twitter.com/SavantFramework) [![Blog](https://img.shields.io/badge/Inside%20InSight%20Blog-444444?logo=medium)](https://b.savant-ai.io/) [![Discord](https://img.shields.io/badge/Discord-8A2BE2)](https://discord.gg/KVAfGBsZGd)
+⭐ Star us on GitHub — it motivates us a lot and helps the project become more visible to developers.
 
-:star: Star us on GitHub — it motivates us a lot and helps the project become more visible to developers.
+Savant is an open-source, high-level framework for building real-time, streaming, highly efficient multimedia AI applications on the Nvidia stack. It helps to develop dynamic, fault-tolerant inference pipelines that utilize the best Nvidia approaches for data center and edge accelerators.
 
-![current-demos-page](https://github.com/insight-platform/Savant/assets/15047882/22a58429-582f-4e46-a5dd-74c54e863bec)
+Savant is built on DeepStream and provides a high-level abstraction layer for building inference pipelines. It is designed to be easy to use, flexible, and scalable. It is a great choice for building smart CV and video analytics applications for cities, retail, manufacturing, and more. Savant is a member of the Nvidia Inception Program.
 
-Savant is an open-source, high-level framework for building real-time, streaming, highly efficient multimedia AI
-applications on the Nvidia stack. It helps to develop dynamic, fault-tolerant inference pipelines that utilize the best
-Nvidia approaches for data center and edge accelerators.
+---
 
-Savant is built on DeepStream and provides a high-level abstraction layer for building inference pipelines. It is
-designed to be easy to use, flexible, and scalable. It is a great choice for building smart CV and video analytics
-applications for cities, retail, manufacturing, and more. Savant is a member of the Nvidia Inception Program.
+### What Version To Use
 
-## What Version To Use
+Savant depends on Nvidia DeepStream and JetPack versions (Jetson). The following tables show the compatibility of Savant versions with DeepStream versions.
 
-Savant depends on Nvidia DeepStream and JetPack versions (Jetson). The following tables show the compatibility of Savant
-versions with DeepStream versions.
+#### 0.2.11 LTS
 
-### 0.2.11 LTS
+This release is recommended for production use. It uses the time-proven DeepStream 6.3. The release works on dGPU (Turing, Volta, Ampere, Ada) and Jetson (Xavier NX/AGX, Orin Nano/NX/AGX) hardware.
 
-This release is recommended for production use. It uses the time-proven DeepStream 6.3. The release works on dGPU (
-Turing, Volta, Ampere, Ada) and Jetson (Xavier NX/AGX, Orin Nano/NX/AGX) hardware.
+**Known drawbacks:** NVJPEG caps on 115MHz on Jetson Orin Nano in JPEG decoding.
 
-Known drawbacks:
+| Requirements | Status | DeepStream |
+| :--- | :--- | :--- |
+| X86 Driver 525(Datacenter), 530+ Quadro/GeForce | Stable | 6.3 |
+| Jetson Xavier, Orin with JetPack 5.1.2 GA | Stable | 6.3 |
 
-- NVJPEG caps on 115MHz on Jetson Orin Nano in JPEG decoding.
+#### 0.3.11 LTS
 
-| Requirements                                    | Status | DeepStream |
-|-------------------------------------------------|--------|------------|
-| X86 Driver 525(Datacenter), 530+ Quadro/GeForce | Stable | 6.3        |
-| Jetson Xavier, Orin with JetPack 5.1.2 GA       | Stable | 6.3        |           
+This release is recommended for production use with DeepStream 6.4. The release works on dGPU (Turing, Volta, Ampere, Ada) and Jetson Orin Nano/NX/AGX hardware (JetPack 6.0 DP). It does not support Jetson Xavier and older devices.
 
-### 0.3.11 LTS
+| Requirements | Status | DeepStream |
+| :--- | :--- | :--- |
+| X86 Driver 525(Datacenter), 530+ Quadro/GeForce | Stable | 6.4 |
+| Jetson Orin JetPack 6.0 DP | Stable | 6.4 |
 
-This release is recommended for production use with DeepStream 6.4. The release works on dGPU (Turing, Volta, Ampere,
-Ada) and Jetson Orin Nano/NX/AGX hardware (JetPack 6.0 DP). It does not support Jetson Xavier and older devices.
+#### 0.4.x Current Develop (Feature Releases)
 
-| Requirements                                    | Status | DeepStream |
-|-------------------------------------------------|--------|------------|
-| X86 Driver 525(Datacenter), 530+ Quadro/GeForce | Stable | 6.4        |
-| Jetson Orin JetPack 6.0 DP                      | Stable | 6.4        |           
+This branch represents current development. It is not recommended for production use. It is a good choice for testing new features and providing feedback and also if you require new features absent in `0.2.x` and `0.3.x`.
 
-### 0.4.x Current Develop (Feature Releases)
+| Requirements | Status | DeepStream |
+| :--- | :--- | :--- |
+| X86 Driver 525(Datacenter), 530+ Quadro/GeForce | Stable | 6.4 |
+| Jetson Orin JetPack 6.0 DP | Stable | 6.4 |
 
-This branch represents current development. It is not recommended for production use. It is a good choice for testing
-new features and providing feedback and also if you require new features absent in `0.2.x` and `0.3.x`.
+---
 
-| Requirements                                    | Status | DeepStream |
-|-------------------------------------------------|--------|------------|
-| X86 Driver 525(Datacenter), 530+ Quadro/GeForce | Stable | 6.4        |
-| Jetson Orin JetPack 6.0 DP                      | Stable | 6.4        |
+### Quick Links
 
-## Chat With Us
+* [Blog](https://github.com/ahmedriaz12/Savant/blob/main/docs/blog.md)
+* [Getting Started Tutorial](https://github.com/ahmedriaz12/Savant/blob/main/docs/getting_started.md)
+* [Pipeline Samples](https://github.com/ahmedriaz12/Savant/tree/main/samples)
+* [Documentation](https://github.com/ahmedriaz12/Savant/tree/main/docs)
 
-The best way to approach us is [Discord](https://discord.gg/KVAfGBsZGd). We are always happy to help you with any
-questions you may have.
+---
 
-## Quick Links
+### Quick Start
 
-- [Blog](https://b.savant-ai.io/)
-- [Getting Started Tutorial](https://docs.savant-ai.io/develop/getting_started/2_module_devguide.html)
-- [Pipeline Samples](https://github.com/insight-platform/Savant/tree/develop/samples)
-- [Documentation](https://docs.savant-ai.io/)
-- [Performance Regression Tracking Dashboard](docs/performance.md)
-
-## Quick Start
-
-Runtime configuration [guide](https://docs.savant-ai.io/develop/getting_started/0_configure_prod_env.html) helps to
-configure the runtime to run Savant pipelines.
-
-The [demo](https://github.com/insight-platform/Savant/tree/develop/samples/peoplenet_detector) shows a pipeline
-featuring person detection, facial detection, tracking, facial blurring (OpenCV CUDA), and a real-time analytics
-dashboard:
-
-![](samples/peoplenet_detector/assets/peoplenet-blur-demo-loop-400.webp)
+Runtime configuration guide helps to configure the runtime to run Savant pipelines. The demo shows a pipeline featuring person detection, facial detection, tracking, facial blurring (OpenCV CUDA), and a real-time analytics dashboard:
 
 ```bash
-git clone https://github.com/insight-platform/Savant.git
+git clone [https://github.com/ahmedriaz12/Savant.git](https://github.com/ahmedriaz12/Savant.git)
 cd Savant/samples/peoplenet_detector
 git lfs pull
-
 # if x86
 ../../utils/check-environment-compatible && docker compose -f docker-compose.x86.yml up
-
 # if Jetson
 ../../utils/check-environment-compatible && docker compose -f docker-compose.l4t.yml up
-
 # open 'rtsp://127.0.0.1:554/stream/city-traffic' in your player
-# or visit 'http://127.0.0.1:888/stream/city-traffic/' (LL-HLS)
-
+# or visit '[http://127.0.0.1:888/stream/city-traffic/](http://127.0.0.1:888/stream/city-traffic/)' (LL-HLS)
 # Ctrl+C to stop running the compose bundle
-
 # to get back to project root
 cd ../..
 ```
@@ -302,21 +274,16 @@ parallelization is achieved by running the pipeline stages in separate threads. 
 is not parallel; the developer can utilize GIL-releasing mechanisms to achieve the desired parallelization with NumPy,
 Numba, or custom native code in C++ or Rust.
 
-## What's Next
+### What's Next
 
-- [Getting Started Tutorial](https://docs.savant-ai.io/develop/getting_started/2_module_devguide.html)
-- [Publications and Samples](https://github.com/insight-platform/Savant/tree/develop/samples)
-- [Documentation](https://docs.savant-ai.io/)
+* [Getting Started Tutorial](https://github.com/ahmedriaz12/Savant/blob/main/docs/getting_started.md)
+* [Publications and Samples](https://github.com/ahmedriaz12/Savant/tree/main/samples)
+* [Documentation](https://github.com/ahmedriaz12/Savant/tree/main/docs)
 
-## Contribution
+### Contribution
 
 We welcome anyone who wishes to contribute, report, and learn.
 
-## About Us
+### About Us
 
-The In-Sight team is a ML/AI department of Bitworks Software. We develop custom high performance CV applications for
-various industries providing full-cycle process, which includes but not limited to data labeling, model evaluation,
-training, pruning, quantization, validation, and verification, pipelines development, CI/CD. We are mostly focused on
-Nvidia hardware (both datacenter and edge).
-
-Contact us: info@bw-sw.com
+The In-Sight team is a ML/AI department of Bitworks Software. We develop custom high performance CV applications for various industries providing full-cycle process, which includes but not limited to data labeling, model evaluation, training, pruning, quantization, validation, and verification, pipelines development, CI/CD. We are mostly focused on Nvidia hardware (both datacenter and edge).
