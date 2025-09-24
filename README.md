@@ -53,6 +53,7 @@ This branch represents current development. It is not recommended for production
 
 Runtime configuration guide helps to configure the runtime to run Savant pipelines. The demo shows a pipeline featuring person detection, facial detection, tracking, facial blurring (OpenCV CUDA), and a real-time analytics dashboard:
 
+(https://github.com/ahmedriaz12/Savant/blob/main/samples/peoplenet_detector/assets/peoplenet-blur-demo-loop-400.webp)
 ```bash
 git clone [https://github.com/ahmedriaz12/Savant.git](https://github.com/ahmedriaz12/Savant.git)
 cd Savant/samples/peoplenet_detector
