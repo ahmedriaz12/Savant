@@ -1,7 +1,7 @@
 # Savant
 
 ⭐ Star us on GitHub — it motivates us a lot and helps the project become more visible to developers.
-
+![img](https://private-user-images.githubusercontent.com/15047882/281369706-22a58429-582f-4e46-a5dd-74c54e863bec.jpeg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTg3MzM4ODYsIm5iZiI6MTc1ODczMzU4NiwicGF0aCI6Ii8xNTA0Nzg4Mi8yODEzNjk3MDYtMjJhNTg0MjktNTgyZi00ZTQ2LWE1ZGQtNzRjNTRlODYzYmVjLmpwZWc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwOTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDkyNFQxNzA2MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZWVmMTBmZWE4NDI3N2FlYWRmNGJiY2QzMTU3YmY4MjdkOWU0YWZiOTlkZWZlZmI0Njg4MDI5N2VjNGYxOTdlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Oj5DMrgvT2WIzFTdmc1swrn6fOhmJ2bSPIaAQ8dVTs0)
 Savant is an open-source, high-level framework for building real-time, streaming, highly efficient multimedia AI applications on the Nvidia stack. It helps to develop dynamic, fault-tolerant inference pipelines that utilize the best Nvidia approaches for data center and edge accelerators.
 
 Savant is built on DeepStream and provides a high-level abstraction layer for building inference pipelines. It is designed to be easy to use, flexible, and scalable. It is a great choice for building smart CV and video analytics applications for cities, retail, manufacturing, and more. Savant is a member of the Nvidia Inception Program.
