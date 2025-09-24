@@ -273,7 +273,6 @@ Numba, or custom native code in C++ or Rust.
 
 ### What's Next
 
-* [Getting Started Tutorial](https://github.com/ahmedriaz12/Savant/blob/main/docs/getting_started.md)
 * [Publications and Samples](https://github.com/ahmedriaz12/Savant/tree/main/samples)
 * [Documentation](https://github.com/ahmedriaz12/Savant/tree/main/docs)
 
