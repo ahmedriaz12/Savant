@@ -194,7 +194,7 @@ resiliently handles situations related to source/sink outages.
 
 The communication interface is not limited to Client SDK: we provide several ready-to-use adapters, which you can use "
 as is" or modify for your needs.
-
+<!-- 
 The following source adapters are available:
 
 - [Local video file](https://docs.savant-ai.io/develop/savant_101/10_adapters.html#video-file-source-adapter);
@@ -219,7 +219,7 @@ Several sink adapters are implemented:
 - [Image directory (per source)](https://docs.savant-ai.io/develop/savant_101/10_adapters.html#image-file-sink-adapter);
 - [Always-On RTSP Stream Sink](https://docs.savant-ai.io/develop/savant_101/10_adapters.html#always-on-rtsp-sink-adapter);
 - [Kafka-Redis](https://docs.savant-ai.io/develop/savant_101/10_adapters.html#kafka-redis-sink-adapter);
-- [Amazon Kinesis Video Streams Sink](https://docs.savant-ai.io/develop/savant_101/10_adapters.html#multistream-kinesis-video-stream-sink-adapter).
+- [Amazon Kinesis Video Streams Sink](https://docs.savant-ai.io/develop/savant_101/10_adapters.html#multistream-kinesis-video-stream-sink-adapter). -->
 
 ### 🎯 Dynamic Parameters Ingestion
 
