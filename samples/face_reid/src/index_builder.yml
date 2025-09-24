@@ -1,0 +1,93 @@
+name: face_reid_index_builder
+
+parameters:
+  detector_w: 640
+  detector_h: 640
+  frame:
+    width: ${parameters.detector_w}
+    height: ${parameters.detector_h}
+
+  output_frame:
+    codec: ${oc.env:CODEC, 'raw-rgba'}
+
+  face_width: 112
+  face_height: 112
+  detection_model_name: yolov8nface
+
+  reid_model_name: adaface_ir50_webface4m_90fb74c
+
+  shutdown_auth: "shutdown"
+  batch_size: 1
+
+pipeline:
+
+  elements:
+    # detector
+    - element: nvinfer@complex_model
+      name: ${parameters.detection_model_name}
+      model:
+        remote:
+          url: s3://savant-data/models/yolov8face/${parameters.detection_model_name}.zip
+          checksum_url: s3://savant-data/models/yolov8face/${parameters.detection_model_name}.md5
+          parameters:
+            endpoint: https://eu-central-1.linodeobjects.com
+        format: onnx
+        config_file: yolov8n-face.txt
+        batch_size: ${parameters.batch_size}
+        input:
+          shape:
+            - 3
+            - ${parameters.detector_h}
+            - ${parameters.detector_w}
+        output:
+          layer_names: [ 'output0' ]
+          converter:
+            module: savant.converter.yolo_v8face
+            class_name: YoloV8faceConverter
+            kwargs:
+              confidence_threshold: 0.6
+              nms_iou_threshold: 0.5
+          objects:
+            - class_id: 0
+              label: face
+              selector:
+                module: savant.selector.detector
+                class_name: MinMaxSizeBBoxSelector
+                kwargs:
+                  min_width: 40
+                  min_height: 40
+          attributes:
+            - name: landmarks
+
+    - element: nvinfer@attribute_model
+      name: ${parameters.reid_model_name}
+      model:
+        remote:
+          url: s3://savant-data/models/${parameters.reid_model_name}/${parameters.reid_model_name}.zip
+          checksum_url: s3://savant-data/models/${parameters.reid_model_name}/${parameters.reid_model_name}.md5
+          parameters:
+            endpoint: https://eu-central-1.linodeobjects.com
+        format: onnx
+        model_file: adaface_ir50_webface4m.onnx
+        batch_size: 16
+        input:
+          object: ${parameters.detection_model_name}.face
+          shape: [3, 112, 112]
+          offsets: [127.5, 127.5, 127.5]
+          scale_factor: 0.007843137254902
+          color_format: bgr
+          preprocess_object_image:
+            module: savant.input_preproc.align_face
+            class_name: AlignFacePreprocessingObjectImageGPU
+        output:
+          layer_names: [ 'feature' ]
+          converter:
+            module: savant.converter
+            class_name: TensorToVectorConverter
+          attributes:
+            - name: feature
+
+    # Log index building stats at the module shutdown
+    - element: pyfunc
+      module: savant.utils.stat_logger
+      class_name: StatLogger

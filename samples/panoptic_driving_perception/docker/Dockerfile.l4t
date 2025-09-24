@@ -1,0 +1,28 @@
+FROM ghcr.io/insight-platform/savant-deepstream-l4t:latest
+
+# based on https://github.com/dusty-nv/jetson-containers
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+            libopenblas-dev \
+            libopenmpi-dev \
+            openmpi-bin \
+            openmpi-common \
+            libomp-dev \
+            libjpeg-dev \
+            zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+# required for torch
+COPY --from=dustynv/l4t-pytorch:r36.2.0 /usr/local/cuda-12.2/targets/aarch64-linux/lib/libcupti.* /usr/local/cuda-12.2/targets/aarch64-linux/lib/
+# install torch-2.1.0, torchvision-0.16.0, torchaudio-2.1.0
+COPY --from=dustynv/l4t-pytorch:r36.2.0 /opt/torch*.whl /opt/
+RUN python -m pip install --no-cache-dir /opt/torch*.whl && \
+    rm /opt/torch*.whl
+
+ENV TORCH_HOME=/cache/models/torch_hub
+RUN export PYTHONPATH=/cache/models/torch_hub:$PYTHONPATH
+
+# install all requirements from repository is leading to reinstall openCV without CUDA support
+#RUN pip3 install -r https://raw.githubusercontent.com/hustvl/YOLOP/main/requirements.txt
+RUN pip3 install prefetch_generator matplotlib yacs
