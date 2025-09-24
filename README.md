@@ -44,9 +44,6 @@ This branch represents current development. It is not recommended for production
 ---
 
 ### Quick Links
-
-* [Blog](https://github.com/ahmedriaz12/Savant/blob/main/docs/blog.md)
-* [Getting Started Tutorial](https://github.com/ahmedriaz12/Savant/blob/main/docs/getting_started.md)
 * [Pipeline Samples](https://github.com/ahmedriaz12/Savant/tree/main/samples)
 * [Documentation](https://github.com/ahmedriaz12/Savant/tree/main/docs)
 
